@@ -10,6 +10,10 @@ Google APIs for Calendar and Spreadsheets were selected to avoid developing an c
 
 The Google Calendar, Sprinklers, is read every 15 minutes for updates. Internal sprinkler schedules are updated. Failure to contact Google and get new changes will let the last schedules to run.
 
+
+
+## Scheduling
+
 This project supports 6 valves. Create a separate calendar entry for each sprinkler. The duration of the event determines the sprinkler runtime. Add a single digit(1-6) to the calendar event message body that determines which sprinkler is targeted. Check the Sprinkler spreadsheet for logs.
 
 The logs below shows that the rpi read the Google Sprinklers calendar and found an event for Garden with '4' in the event message body, starting at 7:00am.
@@ -25,3 +29,22 @@ The logs below shows that the rpi read the Google Sprinklers calendar and found 
 |Sat May 07 20:15:09 PDT 2021|Garden[4]|Scheduled to start at 2021-05-07T21:00:00.000-07:00|
 |Sat May 07 20:57:52 PDT 2021| |Resetting scheduled timers|
 |Sat May 07 20:57:53 PDT 2021| |Reading Sprinkler Calendar|
+
+## Security
+
+Update the main/resources/client_secret.json file with your Google API client credentials and secret.
+
+```json
+{
+    "web": {
+        "client_id": "??????????????????????????????????.apps.googleusercontent.com",
+        "project_id": "?????-????-??????",
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://accounts.google.com/o/oauth2/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_secret": "??????????????????????",
+        "redirect_uris": ["http://localhost:8080/Callback", "http://localhost:8080"],
+        "javascript_origins": ["http://localhost"]
+    }
+}
+```
