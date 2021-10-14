@@ -79,7 +79,7 @@ public class GoogleCalendarReader extends BaseGoogleApi {
 		} else {
 
 			com.google.api.services.calendar.Calendar service = getCalendarService();
-			String calendarId = null; //System.getProperty("SPRINKER_CAL_ID", "lsn2kdle2kpole3m6kor9mefkk@group.calendar.google.com");
+			String calendarId = null; 
 
 			calendarId = getSprinklerCalendar(service);
 			System.out.println("CAL ID " + calendarId);
