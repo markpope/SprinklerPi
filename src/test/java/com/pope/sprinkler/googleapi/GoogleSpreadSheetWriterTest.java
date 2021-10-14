@@ -1,0 +1,44 @@
+package com.pope.sprinkler.googleapi;
+
+import com.google.gdata.data.spreadsheet.SpreadsheetEntry;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+/**
+ *
+ * @author mpope
+ */
+public class GoogleSpreadSheetWriterTest {
+	
+	public GoogleSpreadSheetWriterTest() {
+	}
+	
+	@BeforeClass
+	public static void setUpClass() {
+	}
+	
+	@AfterClass
+	public static void tearDownClass() {
+	}
+	
+	@Before
+	public void setUp() {
+	}
+	
+	@After
+	public void tearDown() {
+	}
+
+//	@Test
+	public void testWriter() throws Exception {
+		com.pope.sprinkler.googleapi.GoogleSpreadSheetWriter writer = com.pope.sprinkler.googleapi.GoogleSpreadSheetWriter.getInstance();
+
+		writer.getSpreadsheet();
+		writer.log("33", "TEST");
+	}
+	
+}
